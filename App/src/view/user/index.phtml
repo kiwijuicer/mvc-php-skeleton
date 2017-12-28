@@ -1,0 +1,55 @@
+<?php
+declare(strict_types = 1);
+
+/** @var \Core\Entity\User[] $users */
+$users = $this->users;
+
+?>
+
+<div class="row page-header">
+
+    <div class="col-lg-9">
+        <h1><?php echo $this->title; ?></h1>
+    </div>
+
+    <div class="col-lg-3" style="margin-top: 15px;">
+        <a class="btn btn-success pull-right" href="/users/new">Create new user</a>
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-sm-12">
+
+        <table class="table table-striped">
+
+            <tr>
+
+                <th>#</th>
+                <th>Name</th>
+                <th>E-Mail</th>
+                <th class="text-right">Actions</th>
+
+            </tr>
+
+            <?php foreach ($users as $user) : ?>
+
+                <tr>
+
+                    <td><?php echo $user->getId(); ?></td>
+                    <td><?php echo $user->getLastName() . ', ' . $user->getFirstName(); ?></td>
+                    <td><?php echo $user->getEmail(); ?></td>
+                    <td class="text-right">
+                        <a class="btn btn-sm btn-primary" href="/users/edit?id=<?php echo $user->getId(); ?>">Edit</a>
+                    </td>
+
+                </tr>
+
+            <?php endforeach; ?>
+
+        </table>
+
+    </div>
+
+</div>

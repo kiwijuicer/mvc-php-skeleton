@@ -1,0 +1,32 @@
+<?php
+declare(strict_types = 1);
+
+/** @var \Exception|null $exception */
+$exception = $this->exception;
+
+?>
+
+<h1>404 - Not found</h1>
+
+<div class="row">
+
+    <div class="col-sm-12">
+
+        <?php if ($exception !== null): ?>
+
+            <b><?php echo get_class($exception); ?></b><br />
+            with Message <b><?php echo $exception->getMessage(); ?></b><br />
+            Stack trace: <br />
+            <i><?php echo $exception->getTraceAsString(); ?></i><br />
+            Thrown in "<b><?php echo $exception->getFile(); ?></b>" on line <b><?php echo $exception->getLine(); ?></b>
+
+        <?php else: ?>
+
+            Whoops, you might have taken a wrong turn. Click here to go back to <a href="/" title="Home">home</a>.
+
+        <?php endif; ?>
+
+    </div>
+
+</div>
+
