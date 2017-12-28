@@ -5,5 +5,5 @@ return [
 
     'env' => 'development',
 
-    'base-url' => 'http://mvc.dev.norbert.c24'
+    'base-url' => ''
 ];
