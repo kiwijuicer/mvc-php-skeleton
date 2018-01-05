@@ -3,6 +3,8 @@ declare (strict_types = 1);
 
 namespace App\Controller;
 
+use KiwiJuicer\Mvc\Controller\AbstractController;
+
 /**
  * Index Controller
  */

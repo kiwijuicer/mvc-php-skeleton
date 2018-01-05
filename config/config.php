@@ -1,13 +1,19 @@
 <?php
 declare (strict_types = 1);
 
-use Core\Log;
+use KiwiJuicer\Mvc\Log;
 
 return [
 
     'env' => 'production',
 
     'base-url' => 'http://mvc.dev.norbert.c24',
+
+    'authentication' => [
+        'classes' => [
+            \App\Authentication\UserSessionAuthentication::class
+        ]
+    ],
 
     'dependencies' => [
 
@@ -18,7 +24,8 @@ return [
         'factories' => [
             \App\Controller\AuthenticationController::class => \App\Controller\Factory\AuthenticationControllerFactory::class,
             \App\Controller\IndexController::class => \App\Controller\Factory\IndexControllerFactory::class,
-            \App\Controller\UserController::class => \App\Controller\Factory\UserControllerFactory::class
+            \App\Controller\UserController::class => \App\Controller\Factory\UserControllerFactory::class,
+            \App\Authentication\UserSessionAuthentication::class => \App\Authentication\Factory\UserSessionAuthenticationFactory::class
         ],
 
         'managers' => [

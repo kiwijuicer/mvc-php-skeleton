@@ -3,7 +3,9 @@ declare (strict_types = 1);
 
 namespace Core\Manager;
 
-use Core\Entity\AbstractEntity;
+use Core\Entity\User;
+use KiwiJuicer\Mvc\Authentication\AuthenticationRepresentationInterface;
+use KiwiJuicer\Mvc\Manager\AbstractManager;
 
 /**
  * User Manager
@@ -22,12 +24,12 @@ class UserManager extends AbstractManager
     const TABLE_NAME = 'user';
 
     /**
-     * Returns entity by email
+     * Authenticates
      *
      * @param string $email
-     * @return \Core\Entity\AbstractEntity|null
+     * @return \Core\Entity\User
      */
-    public function fetchByEmail(string $email): ?AbstractEntity
+    public function fetchByEmail(string $email): User
     {
         $sql = 'SELECT
                     *
@@ -39,7 +41,7 @@ class UserManager extends AbstractManager
 
         $result = $this->tableGateway->query($sql)->fetch(\PDO::FETCH_ASSOC);
 
-        if ($result && count($result) > 0) {
+        if ($result && count($result) > 0 ) {
             return $this->create($result);
         }
 

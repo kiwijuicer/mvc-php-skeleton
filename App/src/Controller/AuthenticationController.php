@@ -3,7 +3,9 @@ declare (strict_types = 1);
 
 namespace App\Controller;
 
-use Core\Mvc\Router;
+use KiwiJuicer\Mvc\Authentication\AuthenticationRepresentationInterface;
+use KiwiJuicer\Mvc\Controller\AbstractController;
+use KiwiJuicer\Mvc\Routing\Router;
 
 /**
  * Authentication Controller
@@ -45,7 +47,7 @@ class AuthenticationController extends AbstractController
 
             if (count($errors) === 0) {
 
-                if ($this->authenticate($params['username'], $params['password'])) {
+                if ($this->getAuthentication()->authenticate($params['username'], $params['password'])) {
                     Router::redirect($params['old_uri'] ?? '/');
                 }
 
@@ -68,7 +70,7 @@ class AuthenticationController extends AbstractController
      */
     public function logoutAction(): void
     {
-        $this->destroySession();
+        $this->getAuthentication()->destroyAuthentication();
 
         Router::redirect('/login');
     }

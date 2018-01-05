@@ -18,6 +18,17 @@ $user = $this->user;
 
                 <input type="hidden" name="user_id" value="<?php echo $user ?! $user->getId() : null; ?>" />
 
+                <div class="form-group<?php echo isset($this->errors['user_gender']) ? ' has-error' : ''; ?>">
+                    <select class="form-control" name="user_gender">
+                        <?php foreach (\Core\Entity\User::GENDER_MAP as $value => $view) : ?>
+                            <option value="<?php echo $value; ?>" <?php echo $value === ($user ? $user->getGender() : null); ?>><?php echo $view; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <?php if (isset($this->errors['user_gender'])): ?>
+                        <ul class="help-block"><li><?php echo $this->errors['user_gender']; ?></li></ul>
+                    <?php endif; ?>
+                </div>
+
                 <div class="form-group<?php echo isset($this->errors['user_first_name']) ? ' has-error' : ''; ?>">
                     <input type="text" name="user_first_name" class="form-control" value="<?php echo $user ? $user->getFirstName() : null; ?>" placeholder="First Name" />
                     <?php if (isset($this->errors['user_first_name'])): ?>
@@ -36,17 +47,6 @@ $user = $this->user;
                     <input type="text" name="user_email" class="form-control" value="<?php echo $user ? $user->getEmail() : null; ?>" placeholder="Email Address" />
                     <?php if (isset($this->errors['user_email'])): ?>
                         <ul class="help-block"><li><?php echo $this->errors['user_email']; ?></li></ul>
-                    <?php endif; ?>
-                </div>
-
-                <div class="form-group<?php echo isset($this->errors['user_gender']) ? ' has-error' : ''; ?>">
-                    <select class="form-control" name="user_gender">
-                        <?php foreach (\Core\Entity\User::GENDER_MAP as $value => $view) : ?>
-                            <option value="<?php echo $value; ?>" <?php echo $value === ($user ? $user->getGender() : null); ?>><?php echo $view; ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                    <?php if (isset($this->errors['user_gender'])): ?>
-                        <ul class="help-block"><li><?php echo $this->errors['user_gender']; ?></li></ul>
                     <?php endif; ?>
                 </div>
 

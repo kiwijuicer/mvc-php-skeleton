@@ -3,6 +3,9 @@ declare (strict_types = 1);
 
 namespace Core\Entity;
 
+use KiwiJuicer\Mvc\Authentication\AuthenticationRepresentationInterface;
+use KiwiJuicer\Mvc\Entity\AbstractEntity;
+
 /**
  * User
  *
@@ -10,7 +13,7 @@ namespace Core\Entity;
  * @author Norbert Hanauer <norbert.hanauer@check24.de>
  * @copyright CHECK24 Vergleichsportal GmbH
  */
-class User extends AbstractEntity
+class User extends AbstractEntity implements AuthenticationRepresentationInterface
 {
     /**
      * Male

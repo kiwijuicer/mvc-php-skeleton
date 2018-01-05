@@ -4,7 +4,6 @@ declare (strict_types = 1);
 namespace App\Controller\Factory;
 
 use App\Controller\IndexController;
-use Core\Manager\UserManager;
 use Psr\Container\ContainerInterface;
 
 /**
@@ -20,8 +19,6 @@ class IndexControllerFactory
      */
     public function __invoke(ContainerInterface $container): IndexController
     {
-        return new IndexController(
-            $container->get(UserManager::class)
-        );
+        return new IndexController();
     }
 }

@@ -4,13 +4,32 @@ declare (strict_types = 1);
 namespace App\Controller;
 
 use Core\Entity\User;
-use Core\Mvc\Router;
+use Core\Manager\UserManager;
+use KiwiJuicer\Mvc\Controller\AbstractController;
+use KiwiJuicer\Mvc\Routing\Router;
 
 /**
  * User Controller
  */
 class UserController extends AbstractController
 {
+    /**
+     * User Manager
+     *
+     * @var \Core\Manager\UserManager
+     */
+    private $userManager;
+
+    /**
+     * Authentication Controller Constructor
+     *
+     * @param \Core\Manager\UserManager $userManager
+     */
+    public function __construct(UserManager $userManager)
+    {
+        $this->userManager = $userManager;
+    }
+
     /**
      * Index action
      *
