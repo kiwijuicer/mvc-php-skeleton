@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "62170e2bcdd1ec2d4a2cd06779905600",
+    "content-hash": "fbc7d6b0a0e8e11e7ac7feec180853db",
     "packages": [
         {
             "name": "kiwi-juicer/php-mvc",
-            "version": "v1.0",
+            "version": "v2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KiwiJuicer/php-mvc.git",
-                "reference": "003467850019c1ce9971ae54ed7a03b94acc74ba"
+                "reference": "d26781d30698ea69eed496cd7352bde9280ced3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KiwiJuicer/php-mvc/zipball/003467850019c1ce9971ae54ed7a03b94acc74ba",
-                "reference": "003467850019c1ce9971ae54ed7a03b94acc74ba",
+                "url": "https://api.github.com/repos/KiwiJuicer/php-mvc/zipball/d26781d30698ea69eed496cd7352bde9280ced3d",
+                "reference": "d26781d30698ea69eed496cd7352bde9280ced3d",
                 "shasum": ""
             },
             "require": {
@@ -40,7 +40,7 @@
             "keywords": [
                 "mvc"
             ],
-            "time": "2017-12-29T13:46:31+00:00"
+            "time": "2018-01-05T08:46:06+00:00"
         },
         {
             "name": "psr/container",

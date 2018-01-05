@@ -13,6 +13,6 @@
   },
   "require": {
     "php": ">=7.0",
-    "kiwi-juicer/php-mvc": "^1.0"
+    "kiwi-juicer/php-mvc": "^2.0"
   }
 }
