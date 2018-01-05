@@ -7,7 +7,21 @@ return [
 
     'env' => 'production',
 
-    'base-url' => 'http://mvc.dev.norbert.c24',
+    'base-url' => '<PRODUCTION_BASE_URL>',
+
+    'db' => [
+        '<DB_NAME>' => [
+            'dsn'            => 'mysql:dbname=<DB_NAME>;host=<HOST>;port=<PORT>;charset=utf8',
+            'driver'         => 'Pdo',
+            'username'       => '<USER>',
+            'password'       => '<PASSWORD>',
+            'driver_options' => [
+                PDO::MYSQL_ATTR_COMPRESS    => false,
+                PDO::ATTR_EMULATE_PREPARES  => false,
+                PDO::ATTR_STRINGIFY_FETCHES => false
+            ]
+        ]
+    ],
 
     'authentication' => [
         'classes' => [
@@ -58,20 +72,6 @@ return [
                         'path' => 'logs/app.log'
                     ]
                 ]
-            ]
-        ]
-    ],
-
-    'db' => [
-        'mvc' => [
-            'dsn'            => 'mysql:dbname=mvc;host=127.0.0.1;port=3306;charset=utf8',
-            'driver'         => 'Pdo',
-            'username'       => 'mvc-user',
-            'password'       => 'Okifofogu695',
-            'driver_options' => [
-                PDO::MYSQL_ATTR_COMPRESS    => false,
-                PDO::ATTR_EMULATE_PREPARES  => false,
-                PDO::ATTR_STRINGIFY_FETCHES => false
             ]
         ]
     ],

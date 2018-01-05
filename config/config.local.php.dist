@@ -3,7 +3,21 @@ declare (strict_types = 1);
 
 return [
 
-    'env' => 'development',
+    'env' => 'production',
 
-    'base-url' => ''
+    'base-url' => '<PRODUCTION_BASE_URL>',
+
+    'db' => [
+        '<DB_NAME>' => [
+            'dsn'            => 'mysql:dbname=<DB_NAME>;host=<HOST>;port=<PORT>;charset=utf8',
+            'driver'         => 'Pdo',
+            'username'       => '<USER>',
+            'password'       => '<PASSWORD>',
+            'driver_options' => [
+                PDO::MYSQL_ATTR_COMPRESS    => false,
+                PDO::ATTR_EMULATE_PREPARES  => false,
+                PDO::ATTR_STRINGIFY_FETCHES => false
+            ]
+        ]
+    ]
 ];
