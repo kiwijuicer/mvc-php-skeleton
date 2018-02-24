@@ -44,7 +44,7 @@ class UserSessionAuthentication extends AbstractSessionAuthentication
         $user = $this->userManager->fetchByEmail($email);
 
         if ($user instanceof AuthenticationRepresentationInterface && password_verify($password, $user->getPassword())) {
-            $this->setAuthorisationRepresentation($user);
+            $this->setAuthenticationRepresentation($user);
             return $user;
         }
 
