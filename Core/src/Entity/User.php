@@ -10,8 +10,7 @@ use KiwiJuicer\Mvc\Entity\AbstractEntity;
  * User
  *
  * @package Core\Entity
- * @author Norbert Hanauer <norbert.hanauer@check24.de>
- * @copyright CHECK24 Vergleichsportal GmbH
+ * @author Norbert Hanauer <info@norbert-hanauer.de>
  */
 class User extends AbstractEntity implements AuthenticationRepresentationInterface
 {
