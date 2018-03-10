@@ -11,8 +11,7 @@ use KiwiJuicer\Mvc\Manager\AbstractManager;
  * User Manager
  *
  * @package Core\Manager
- * @author Norbert Hanauer <norbert.hanauer@check24.de>
- * @copyright CHECK24 Vergleichsportal GmbH
+ * @author Norbert Hanauer <info@norbert-hanauer.de>
  */
 class UserManager extends AbstractManager
 {
